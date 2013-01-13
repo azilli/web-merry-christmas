@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>window.onerror=report=function(m,u,l){var n=encodeURIComponent;new Image().src="/jserr?url="+n(window.location)+"&msg="+n(m && m.stack ? m.stack : m)+"&src="+n(u)+"&line="+n(l);return!1}
+</script><meta name="keywords" content="gradebook, online gradebook, gradebook software, free gradebook software, free online gradebook, lesson plan, lessonplan, attendance"><meta name="description" content="Free, easy to use online gradebook software with grade book, lesson plan, attendance and calendar tools for teachers."><meta property="fb:page_id" content="124569907587356"><title>Roster | llll | LearnBoost</title><script>var lb_revision = "3e665d"
+
+</script><script>var lb_timezone = Number(-120);
+</script><link href="bundles/e0d276.css" rel="stylesheet" media="screen"><link href="bundles/b0407a.css" rel="stylesheet" media="screen"><link href="compiled/3ff744.css" rel="stylesheet" media="screen" data-state-asset><link href="bundles/be13e7.css" rel="stylesheet" media="screen"><link href="bundles/29df39.css" rel="stylesheet" media="screen" data-state-asset><link href="compiled/3069e6.css" rel="stylesheet" media="screen" data-state-asset><link href="compiled/bdf455.css" rel="stylesheet" media="screen" data-state-asset><link href="compiled/3769ee.css" rel="stylesheet" media="screen" data-state-asset><link href="bundles/f186ae.css" rel="stylesheet" media="screen" data-state-asset><link href="compiled/22c634.css" rel="stylesheet" media="screen" data-state-asset><link href="compiled/f7f87d.css" rel="stylesheet" media="screen" data-state-asset><link href="compiled/0aeb58.css" rel="stylesheet" media="screen" data-state-asset><!--[if lt IE 9]><link href="/ie/ie.css" rel="stylesheet" media="screen"><![endif]--><!--[if lte IE 7]><link href="/css/ie/7.css" rel="stylesheet" media="screen"><![endif]--><!--[if lte IE 8]><link href="/css/ie/8.css" rel="stylesheet" media="screen"><![endif]--><!--[if IE 9]><link href="/css/ie/9.css" rel="stylesheet" media="screen"><![endif]--><script src="bundles/9b0548.js"></script><script src="bundles/d79b50.js"></script><script src="bundles/31874a.js" data-state-asset></script><script src="bundles/3096a4.js" data-state-asset></script><script src="bundles/f1c411.js" data-state-asset></script><script src="bundles/fbe670.js" data-state-asset></script><script src="compiled/52e5d3.js" data-state-asset></script><script src="compiled/b4c432.js" data-state-asset></script><script src="compiled/a3e794.js" data-state-asset></script><script src="compiled/85a349.js" data-state-asset></script><script src="compiled/fb4422.js" data-state-asset></script><script src="compiled/b26795.js" data-state-asset></script><script src="compiled/588389.js" data-state-asset></script><script src="compiled/17b119.js" data-state-asset></script><script src="compiled/b683d7.js" data-state-asset></script><script src="bundles/a4210d.js" data-state-asset></script><script src="compiled/411d5b.js" data-state-asset></script><script src="i18n/jquery-validate.js"></script><script src="i18n/ui.js"></script><script>LearnBoost.phrases = JSON.parse('{}');
+</script><script>var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15746556-1']);
+_gaq.push(['_setDomainName', '.learnboost.com']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+    <meta charset="utf-8">
+    <title>Demo 1</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/StyleSheet.css" rel="stylesheet">
+    <style>
+        
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                
+                <div class="nav-collapse collapse">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span6">
+                <a class="btn btn-mini btn-info" href="#"><i class="icon-chevron-left icon-white"></i>
+                    back</a>
+            </div>
+            <div class="span6">
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <a class="btn btn-mini btn-info" href="#"><i class="icon-cog icon-white"></i>settings</a>
+                        <a class="btn btn-mini btn-info" href="#"><i class="icon-user icon-white"></i>profiles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div class="row-fluid">
+                <div class="span12">
+                    <p>
+                        <span class="label label-inverse huge-label">Class Web Programming</span>
+                    </p>
+                    <ul id="mainTab" class="nav nav-tabs">
+                        <li class="active"><a href="#Class Roster" data-toggle="tab">Class Roster</a> </li>
+                        <li><a href="#Gradebook" data-toggle="tab">Gradebook</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane inactive" id="Gradebook">
+                            <div class="container-fluid">
+                                <div class="row-fluid">
+                                    <div class="span10">
+                                        <div class="tab-pane" id="Gradebook">
+                                            <div id="gradebook-wrap" class="gradebook-wrap">
+                                                <div data-classroom-id="50d5f5b72eb8af0b21d2fb38" data-scale-type="ranges" data-scale-ranges="[{&quot;from&quot;:90,&quot;to&quot;:100,&quot;name&quot;:&quot;A&quot;},{&quot;from&quot;:80,&quot;to&quot;:89,&quot;name&quot;:&quot;B&quot;},{&quot;from&quot;:70,&quot;to&quot;:79,&quot;name&quot;:&quot;C&quot;},{&quot;from&quot;:60,&quot;to&quot;:69,&quot;name&quot;:&quot;D&quot;},{&quot;from&quot;:0,&quot;to&quot;:59,&quot;name&quot;:&quot;F&quot;}]" data-assignment-types="[{&quot;_id&quot;:&quot;50d5f5b72eb8af0b21d2fb34&quot;,&quot;name&quot;:&quot;Quiz&quot;,&quot;assignments&quot;:[]},{&quot;_id&quot;:&quot;50d5f5b72eb8af0b21d2fb35&quot;,&quot;name&quot;:&quot;Homework&quot;,&quot;assignments&quot;:[&quot;50d5f6642eb8af0b21d2ff80&quot;]},{&quot;_id&quot;:&quot;50d5f5b72eb8af0b21d2fb36&quot;,&quot;name&quot;:&quot;Test&quot;,&quot;assignments&quot;:[]},{&quot;_id&quot;:&quot;50d5f5b72eb8af0b21d2fb37&quot;,&quot;name&quot;:&quot;Assignment&quot;,&quot;assignments&quot;:[]}]" data-weight-type="equal" data-display="percentage" data-assignment-sort="oldtonew" class="gradebook table-actions">
+                                                    <div class="gradebook-header head">
+                                                        <div class="wrap">
+                                                            <a href="#" class="action-button action-toggle-fullscreen fullscreen-button"><span></span></a><a class="action-button options-button settings-button"><span>Settings</span></a>
+                                                            <ul class="options-button-menu">
+                                                                <li><a data-popup-remote="true" href="/teacher/manage/gradebook/grade-scale/50d5f5b72eb8af0b21d2fb38">Grade Scale</a></li>
+                                                                <li><a data-popup-remote="true" href="/teacher/manage/gradebook/assignment-types/50d5f5b72eb8af0b21d2fb38">Types & Calculations</a></li>
+                                                                <li><a data-popup-remote="true" href="/teacher/manage/gradebook/sort-display/50d5f5b72eb8af0b21d2fb38">Sort & Display</a></li>
+                                                                <li><a href="/teacher/manage/classroom/roster/50d5f5b72eb8af0b21d2fb38" data-state>Update Roster</a></li>
+                                                                <li class="ipad-hidden"><a href="/teacher/manage/gradebook/print/50d5f5b72eb8af0b21d2fb38" target="_blank">Print Student Report</a></li>
+                                                                <li class="ipad-hidden"><a data-popup-remote="true" href="/teacher/manage/gradebook/export/50d5f5b72eb8af0b21d2fb38/csv">Export to CSV</a></li>
+                                                            </ul>
+                                                            <a data-popup-remote="true" href="/teacher/manage/gradebook/add/50d5f5b72eb8af0b21d2fb38" class="action-button">Add Assignment</a><a class="action-button save-button">Save</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tables-headers-container">
+                                                        <div class="students-container">
+                                                            <table class="gradebook-table">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col" class="first header">
+                                                                            <div><a class="id">ID</a><span>First name</span></div>
+                                                                        </th>
+                                                                        <th scope="col" class="last header">
+                                                                            <div>Last name</div>
+                                                                        </th>
+                                                                        <th scope="col" class="grades">
+                                                                            <div>Grade</div>
+                                                                        </th>
+                                                                        <th scope="col" class="handlebar">
+                                                                            <div>&nbsp;</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                        <div class="grades-container">
+                                                            <table class="gradebook-table-grades">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th data-assignment-id="50d5f6642eb8af0b21d2ff80" data-assignment-type="50d5f5b72eb8af0b21d2fb35" data-points="679" data-name="vfjh " data-duedate="1356559200000" class="assignment assignment-50d5f6642eb8af0b21d2ff80">
+                                                                            <div><em style="background-color: " class="color vert"></em><span>vfjh </span><a data-tip-remote="/teacher/manage/gradebook/assignment-info/50d5f5b72eb8af0b21d2fb38/50d5f6642eb8af0b21d2ff80" data-tip-class="tip-info" class="info">i</a></div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tables-container-wrap">
+                                                        <div class="tables-container">
+                                                            <div class="wrap">
+                                                                <div class="students-container">
+                                                                    <table class="gradebook-table">
+                                                                        <tbody>
+                                                                            <tr data-student-id="50d5f0471105bd0a21d367c1">
+                                                                                <th scope="row" class="first">
+                                                                                    <div><a data-tip-html="Student ID: 80890" class="id">id</a>Ololo</div>
+                                                                                </th>
+                                                                                <th scope="row" class="last">
+                                                                                    <div>Ololo1</div>
+                                                                                </th>
+                                                                                <th scope="row" class="handlebar-prev grades ">
+                                                                                    <div class="display">F</div>
+                                                                                </th>
+                                                                                <th scope="row" class="handlebar">&nbsp;</th>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="antiscroll-wrap">
+                                                                    <div class="antiscroll-inner">
+                                                                        <div class="grades-container">
+                                                                            <table class="gradebook-table-grades">
+                                                                                <tbody>
+                                                                                    <tr data-student-id="50d5f0471105bd0a21d367c1">
+                                                                                        <td data-points="45" class="">
+                                                                                            <div>7%</div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="tab-pane active" id="Class Roster">
+                            <div class="row-fluid">
+                                <div class="span10">
+                                    <div class="tab-pane active" id="Class Rooster">
+                                        <div id="manage-roster" data-classroom="50d5f5b72eb8af0b21d2fb38" />
+                                        <p class="title-section"><a>Class roster</a><span class="subtitle">Your students</span></p>
+                                        <form data-dynamic="true" action="/teacher/manage/classroom/roster/50d5f5b72eb8af0b21d2fb38" method="post" class="rounded">
+                                            <input type="hidden" name="__csrf" value="qVpJZRG7k0GcOOgXcJNofDJAUuIq85f6DFFh7JMswJA" />
+                                            <div id="roster-table" class="table-actions">
+                                                <div class="head">
+                                                    <div class="wrap">
+                                                        <div class="right">
+                                                            <input type="submit" data-name="do" data-value="Email" value="Email" class="action-button action-button-delete demo-disabled" /><a class="action-button options-button"><span>Import</span></a>
+                                                            <ul class="options-button-menu">
+                                                                <li><a data-popup-remote="true" href="/teacher/manage/classroom/roster/import/50d5f5b72eb8af0b21d2fb38">CSV</a></li>
+                                                                <li><a data-popup-remote="true" href="/teacher/manage/classroom/roster/existing/50d5f5b72eb8af0b21d2fb38/dialog">Existing Classroom</a></li>
+                                                            </ul>
+                                                            <a href="/teacher/manage/classroom/roster/print/50d5f5b72eb8af0b21d2fb38" target="_blank" class="action-button">Print</a>
+                                                        </div>
+                                                        <input type="submit" data-name="do" data-value="Remove" value="Remove" class="action-button demo-disabled" />
+                                                    </div>
+                                                </div>
+                                                <table id="roster-tbl" data-persistence="teacher-roster-50d5f5b72eb8af0b21d2fb38" data-classid="50d5f5b72eb8af0b21d2fb38" class="table-actions table-editable sorttable ">
+                                                <thead>
+                                                    <tr>
+                                                        <th><input type="checkbox" /></th>
+                                                        <th><a>ID</a></th>
+                                                        <th><span class="asterisk">*</span><a>First name</a></th>
+                                                        <th><span class="asterisk">*</span><a>Last name</a></th>
+                                                        <th><span class="asterisk">*</span><a>Email</a></th>
+                                                        <th>Phone</th>
+                                                        <th class="accesscol">Student Access</th>
+                                                        <th class="accesscol">Parent Access</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id="std-50d5f0471105bd0a21d367c1">
+                                                        <td class="no-input"><input type="checkbox" name="selected[id][50d5f0471105bd0a21d367c1]" value="1" /></td>
+                                                        <td class="sid "><input type="text" name="roster[50d5f0471105bd0a21d367c1][ident]" value="80890" class="" /></td>
+                                                        <td class=""><input type="text" name="roster[50d5f0471105bd0a21d367c1][name][first]" value="Ololo" class="required" /></td>
+                                                        <td class=""><input type="text" name="roster[50d5f0471105bd0a21d367c1][name][last]" value="Ololo1" class="required" /></td>
+                                                        <td class=""><input type="text" name="roster[50d5f0471105bd0a21d367c1][contact][email]" value="ololo@ololo.sh" class="email required" /></td>
+                                                        <td class=""><input type="text" name="roster[50d5f0471105bd0a21d367c1][contact][phone]" value="" /></td>
+                                                        <td class="no-input accesscol"><span>Disabled</span></td>
+                                                        <td class="no-input accesscol"><span>Disabled</span></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr class="new">
+                                                        <td>
+                                                            <div class="add"></div>
+                                                        </td>
+                                                        <td class="sid"><input type="text" name="add[0][ident]" class="sid " /></td>
+                                                        <td><input type="text" name="add[0][first]" data-autocomplete-url="/teacher/manage/classroom/roster/search/50d5f5b72eb8af0b21d2fb38/student" data-autocomplete-focus="false" data-autocomplete-max="5" data-autocomplete-html class="firstname required" /></td>
+                                                        <td><input type="text" name="add[0][last]" class="lastname required" /></td>
+                                                        <td><input type="text" name="add[0][email]" class="email required" /></td>
+                                                        <td><input type="text" name="add[0][phone]" class="phone" /></td>
+                                                        <td class="accesscol">&nbsp;</td>
+                                                        <td class="accesscol">&nbsp;</td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                            <span><b>Tip: </b> To add an existing student, start typing the first name to see available choices.</span>
+                                        </div>
+                                        <div class="buttons"><a href="/teacher/manage/classroom/50d5f5b72eb8af0b21d2fb38" data-state class="cancel">Cancel</a><input type="submit" data-name="do" value="Save" class="action-button" /></div>
+                                    </form>
+                                </div>
+                            </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

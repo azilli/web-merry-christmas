@@ -120,7 +120,7 @@
             var params = {
                 assignment_id: grade.assignment_id,
                 student_id: grade.student_id,
-                data: JSON.stringify(grade)
+                data: ko.toJSON(grade)
             }
 
             $.ajax({
@@ -143,7 +143,6 @@
             );
 
             self.assignments.push(assignment);
-
 
             var params = {
                 id: null,

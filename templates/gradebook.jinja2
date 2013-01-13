@@ -59,7 +59,7 @@
             <table>
                 <thead>
                     <tr data-bind="foreach : assignments">
-                        <th class="first_name_type_grades" data-bind="text : name()" />
+                        <th class="first_name_type_grades" data-bind="text : name(), click : $root.removeAssignment" />
                     </tr>
                 </thead>
                 <tbody data-bind="foreach : students">

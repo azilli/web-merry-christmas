@@ -114,6 +114,36 @@
             )
         );
 
+        self.removeAssignment = function(assignment) {
+            var params = {
+                id: assignment.id()
+            }
+
+            $.ajax({
+                url: "/assignments/remove",
+                type: "POST",
+                data: params,
+                success: function (data) {
+                    // Removing grades
+                    ko.utils.arrayForEach(
+                        self.students(),
+                        function (student) {
+                            student.grades.remove(
+                                function (grade) {
+                                    return grade().assignment_id == assignment.id();
+                                }
+                            );
+                        }
+                    );
+                    // Removing assignment
+                    self.assignments.remove(assignment);
+                },
+                error: function (data) {
+
+                }
+            })
+        }
+
         self.editGrade = function(grade) {
             console.log(grade);
 

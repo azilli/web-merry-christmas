@@ -147,12 +147,19 @@ class EditAssignment(webapp2.RequestHandler):
         self.response.out.write(dumps({"id" : id_str}))
 
 
+class RemoveAssignment(webapp2.RequestHandler):
+    def post(self):
+        id = int(self.request.get('id'))
+        sys.stderr.write("\nremoving assignment with id=%s\n" % id)
+
+
 app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/gradebook', GradebookHandler),
                                ('/class-roster', ClassRosterHandler),
                                ('/students/edit', EditStudent),
                                ('/students/remove', RemoveStudent),
                                ('/grades/edit', EditGrade),
-                               ('/assignments/edit', EditAssignment)],
+                               ('/assignments/edit', EditAssignment),
+                               ('/assignments/remove', RemoveAssignment)],
     debug=True)
 

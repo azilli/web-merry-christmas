@@ -109,13 +109,12 @@ class EditStudent(webapp2.RequestHandler):
 # Handlers for updating grades and assignments
 class EditGrade(webapp2.RequestHandler):
     def post(self):
-        data = loads(self.request.get('data'))
-        assignment = Assignment.get_by_id(int(loads(self.request.get('assignment_id'))))
-        student = Student.get_by_id(int(loads(self.request.get('student_id'))))
+        assignment = Assignment.get_by_id(int(self.request.get('assignment_id')))
+        student = Student.get_by_id(int(self.request.get('student_id')))
 
         grade = Grade.all().filter("assignment = ", assignment).filter("student = ", student)
 
-        grade.mark = data["grade"]
+        grade.mark = int(self.request.get('grade'))
         grade.put()
 
         sys.stderr.write("\nediting grade with student_id=%s, assignment_id=%s, data=%s\n" % (student, assignment, data))

@@ -123,6 +123,8 @@
                 data: ko.toJSON(grade)
             }
 
+            console.log(params);
+
             $.ajax({
                 url: "/grades/edit",
                 type: "POST",

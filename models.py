@@ -22,7 +22,7 @@ class Student(db.Model):
             'id': self.key().id(),
             'firstName': self.first_name,
             'secondName': self.last_name,
-            'grades': [int(grade) for grade in Grade.all().filter("student = ", self)],
+            'grades': [int(grade.mark) for grade in Grade.all().filter("student = ", self)],
             }
 
 

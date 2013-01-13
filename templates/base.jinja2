@@ -54,11 +54,11 @@
 
         <div class="tabbable tb">
             <ul class="nav nav-tabs tp">
-                <li class="active">
-                    <a href="#">Main</a>
+                <li{% if url=="/class-roster" %} class="active"{% endif %}>
+                    <a href="/class-roster">Main</a>
                 </li>
-                <li>
-                    <a href="#">Non static</a>
+                <li{% if url=="/gradebook" %} class="active"{% endif %}>
+                    <a href="/gradebook">Gradebook</a>
                 </li>
             </ul>
             <div class="tab-content cont">

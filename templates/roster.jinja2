@@ -14,113 +14,113 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row-fluid">
-            <div class="tabbable tabs-left">
-                <ul class="nav nav-tabs lf">
-                    <li><a href="#lA" data-toggle="tab">Info</a></li>
-                    <li class="active"><a href="#lB" data-toggle="tab">Class Roster</a></li>
-                    <li><a href="#lC" data-toggle="tab">Seating</a></li>
-                    <li><a href="#lD" data-toggle="tab">Schedule</a></li>
-                    <li><a href="#lE" data-toggle="tab">Access</a></li>
-                    <li><a href="#lF" data-toggle="tab">Policy</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane" id="lA">
-                       <div class="span12 tm">
-                            <div class="div-top"></div>
-                            <h4>Info</h4>
-                            <h5>Setting up a new class</h5>
-                            <div class="temp_cl">
-                                <div class="row">
-                                    <div class="span6">
-                                        <div class="cl_name">
-                                            <label>
-                                                *
-                                                                    <p>Class name</p>
-                                            </label>
-                                        </div>
-                                        <input class="input-xlarge ix" type="text">
-                                        <div class="div_tp">
-                                            <label>
-                                                *
-                                                                    <p>Subject</p>
-                                            </label>
-                                        </div>
-                                        <input class="input-xlarge ix" type="text">
-                                        <div class="div_tp">
-                                            <label>
-                                                *
-                                                                    <p>Course number</p>
-                                            </label>
-                                        </div>
-                                        <input class="input-xlarge ix" type="text">
-                                        <div class="div_tp">
-                                            <label>
-                                                <p>School session</p>
-                                            </label>
-                                        </div>
-                                        <select class="span2 tp">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                        </select>
-                                        <div class="row">
-                                            <div class="span6 spn">
-                                                <div class="div_tp">
-                                                    <label>
-                                                        *
-                                                                            <p>Start Date</p>
-                                                    </label>
-                                                </div>
-                                                <input class="input-medium med" type="text" />
-                                                <div class="day_name">
-                                                    <h6>Mon, Jan 23 2012</h6>
-                                                </div>
-                                            </div>
-                                            <div class="span6 nsp">
-                                                <div class="div_tp">
-                                                    <label style="margin-left: 12%;">
-                                                        *
-                                                                            <p>End Date</p>
-                                                    </label>
-                                                </div>
-                                                <input class="input-medium md" type="text" />
-                                                <div class="day_name2">
-                                                    <h6>Wed, May 30 2012</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="span6 lf">
-                                        <div class="row">
-                                            <div class="span5 tp">
-                                                <div class="div_tp">
-                                                    <label>Max # of students</label>
-                                                </div>
-                                                <input class="input-medium mi" type="text">
-                                            </div>
-                                            <div class="span5 mp">
-                                                <div class="div_tp">
-                                                    <label>Grade level</label>
-                                                </div>
-                                                <select class="span2 tx">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="div_tp">
-                                            <label>Description</label>
-                                        </div>
-                                        <div class="arr_div">
-                                            <textarea rows="10" cols="10" name="text"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane active" id="lB">
+{#            <div class="tabbable tabs-left">#}
+{#                <ul class="nav nav-tabs lf">#}
+{#                    <li><a href="#lA" data-toggle="tab">Info</a></li>#}
+{#                    <li class="active"><a href="#lB" data-toggle="tab">Class Roster</a></li>#}
+{#                    <li><a href="#lC" data-toggle="tab">Seating</a></li>#}
+{#                    <li><a href="#lD" data-toggle="tab">Schedule</a></li>#}
+{#                    <li><a href="#lE" data-toggle="tab">Access</a></li>#}
+{#                    <li><a href="#lF" data-toggle="tab">Policy</a></li>#}
+{#                </ul>#}
+{#                <div class="tab-content">#}
+{#                    <div class="tab-pane" id="lA">#}
+{#                       <div class="span12 tm">#}
+{#                            <div class="div-top"></div>#}
+{#                            <h4>Info</h4>#}
+{#                            <h5>Setting up a new class</h5>#}
+{#                            <div class="temp_cl">#}
+{#                                <div class="row">#}
+{#                                    <div class="span6">#}
+{#                                        <div class="cl_name">#}
+{#                                            <label>#}
+{#                                                *#}
+{#                                                                    <p>Class name</p>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                        <input class="input-xlarge ix" type="text">#}
+{#                                        <div class="div_tp">#}
+{#                                            <label>#}
+{#                                                *#}
+{#                                                                    <p>Subject</p>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                        <input class="input-xlarge ix" type="text">#}
+{#                                        <div class="div_tp">#}
+{#                                            <label>#}
+{#                                                *#}
+{#                                                                    <p>Course number</p>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                        <input class="input-xlarge ix" type="text">#}
+{#                                        <div class="div_tp">#}
+{#                                            <label>#}
+{#                                                <p>School session</p>#}
+{#                                            </label>#}
+{#                                        </div>#}
+{#                                        <select class="span2 tp">#}
+{#                                            <option>1</option>#}
+{#                                            <option>2</option>#}
+{#                                            <option>3</option>#}
+{#                                        </select>#}
+{#                                        <div class="row">#}
+{#                                            <div class="span6 spn">#}
+{#                                                <div class="div_tp">#}
+{#                                                    <label>#}
+{#                                                        *#}
+{#                                                                            <p>Start Date</p>#}
+{#                                                    </label>#}
+{#                                                </div>#}
+{#                                                <input class="input-medium med" type="text" />#}
+{#                                                <div class="day_name">#}
+{#                                                    <h6>Mon, Jan 23 2012</h6>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="span6 nsp">#}
+{#                                                <div class="div_tp">#}
+{#                                                    <label style="margin-left: 12%;">#}
+{#                                                        *#}
+{#                                                                            <p>End Date</p>#}
+{#                                                    </label>#}
+{#                                                </div>#}
+{#                                                <input class="input-medium md" type="text" />#}
+{#                                                <div class="day_name2">#}
+{#                                                    <h6>Wed, May 30 2012</h6>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="span6 lf">#}
+{#                                        <div class="row">#}
+{#                                            <div class="span5 tp">#}
+{#                                                <div class="div_tp">#}
+{#                                                    <label>Max # of students</label>#}
+{#                                                </div>#}
+{#                                                <input class="input-medium mi" type="text">#}
+{#                                            </div>#}
+{#                                            <div class="span5 mp">#}
+{#                                                <div class="div_tp">#}
+{#                                                    <label>Grade level</label>#}
+{#                                                </div>#}
+{#                                                <select class="span2 tx">#}
+{#                                                    <option>1</option>#}
+{#                                                    <option>2</option>#}
+{#                                                    <option>3</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="div_tp">#}
+{#                                            <label>Description</label>#}
+{#                                        </div>#}
+{#                                        <div class="arr_div">#}
+{#                                            <textarea rows="10" cols="10" name="text"></textarea>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="tab-pane active" id="lB">#}
 
                         <div id="roster_table" class="rost">
                             <div class="rost_head">
@@ -167,21 +167,21 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div class="tab-pane" id="lC">
-                        <p>What up girl, this is Section C.</p>
-                    </div>
-                    <div class="tab-pane" id="lD">
-                        <p>What up girl, this is Section D.</p>
-                    </div>
-                    <div class="tab-pane" id="lE">
-                        <p>What up girl, this is Section E.</p>
-                    </div>
-                    <div class="tab-pane" id="lF">
-                        <p>What up girl, this is Section F.</p>
-                    </div>
-                </div>
-            </div>
+{#                    </div>#}
+{#                    <div class="tab-pane" id="lC">#}
+{#                        <p>What up girl, this is Section C.</p>#}
+{#                    </div>#}
+{#                    <div class="tab-pane" id="lD">#}
+{#                        <p>What up girl, this is Section D.</p>#}
+{#                    </div>#}
+{#                    <div class="tab-pane" id="lE">#}
+{#                        <p>What up girl, this is Section E.</p>#}
+{#                    </div>#}
+{#                    <div class="tab-pane" id="lF">#}
+{#                        <p>What up girl, this is Section F.</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
         </div>
     </div>
 {% endblock %}

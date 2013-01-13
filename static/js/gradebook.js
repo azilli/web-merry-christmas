@@ -151,6 +151,8 @@
                 }
             );
 
+            data: ko.toJSON(assignment)
+
             var params = {
                 id: null,
                 data: JSON.stringify(assignment)

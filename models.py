@@ -17,12 +17,29 @@ class Student(db.Model):
             'phone': self.phone,
             }
 
+    def get_gradebook_json(self):
+        return {
+            'id': self.key().id(),
+            'firstName': self.first_name,
+            'secondName': self.last_name,
+            'grades': [int(grade) for grade in Grade.all().filter("student = ", self)],
+            }
+
 
 class Assignment(db.Model):
-    pass
+
+    name = db.StringProperty()
+    max_grade = db.IntegerProperty()
+
+    def get_json(self):
+        return {
+            'id': self.key().id(),
+            'name': self.name,
+            'maxGrade': self.max_grade,
+            }
 
 
 class Grade(db.Model):
-    mark = db.FloatProperty()
+    mark = db.IntegerProperty()
     student = db.ReferenceProperty(reference_class=Student, verbose_name="FK Student")
     assignment = db.ReferenceProperty(reference_class=Assignment, verbose_name="FK Assignment")

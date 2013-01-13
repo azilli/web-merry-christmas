@@ -144,18 +144,10 @@
 
             self.assignments.push(assignment);
 
-            ko.utils.arrayForEach(
-                self.students(),
-                function (student) {
-                    student.grades.push(ko.observable(new GradeWrapper(student.id(), assignment.id(), 0)));
-                }
-            );
-
-            data: ko.toJSON(assignment)
 
             var params = {
                 id: null,
-                data: JSON.stringify(assignment)
+                data: ko.toJSON(assignment)
             }
 
             $.ajax({
@@ -166,6 +158,13 @@
                     if (!data.id === undefined){
                         assignment.id(data.id);
                     }
+
+                    ko.utils.arrayForEach(
+                        self.students(),
+                        function (student) {
+                            student.grades.push(ko.observable(new GradeWrapper(student.id(), assignment.id(), 0)));
+                        }
+                    );
                 },
                 error: function (data) {
 

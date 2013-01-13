@@ -142,7 +142,7 @@ class EditAssignment(webapp2.RequestHandler):
                 grade.student = student
                 grade.put()
 
-        id_str = assignment.key().id()
+        id_str = str(assignment.key().id())
         sys.stderr.write("\nediting grade with id=%s, data=%s\n" % (id_str, data))
         self.response.out.write(dumps({"id" : id_str}))
 
@@ -150,6 +150,12 @@ class EditAssignment(webapp2.RequestHandler):
 class RemoveAssignment(webapp2.RequestHandler):
     def post(self):
         id = int(self.request.get('id'))
+        assignment = Assignment.get_by_id(int(id))
+
+        for grade in Grade.all().filter("assignment = ", assignment):
+            grade.delete()
+
+        assignment.delete()
         sys.stderr.write("\nremoving assignment with id=%s\n" % id)
 
 

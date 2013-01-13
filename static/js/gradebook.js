@@ -66,7 +66,20 @@
                     return grade().grade();
                 }
             ));
-            return sum / self.grades().length;
+            var percentage = (sum / self.grades().length) / MAX_GRADE;
+            if (percentage >= 0.9) {
+                return "A"
+            } else if (percentage >= 0.8) {
+                return "B"
+            } else if (percentage >= 0.7) {
+                return "C"
+            } else if (percentage >= 0.6) {
+                return "D"
+            } else if (percentage >= 0.5) {
+                return "E"
+            } else {
+                return "F"
+            }
         });
     };
 
@@ -76,6 +89,8 @@
         this.name = ko.observable(name);
         this.maxGrade = ko.observable(maxGrade);
     };
+
+    var MAX_GRADE = 100;
 
     // our main view model
     var ViewModel = function (inputStudents, inputAssignments) {
@@ -171,7 +186,7 @@
             var assignment = new Assignment(
                 null,
                 "Lesson #" + (self.assignments().length + 1),
-                5
+                MAX_GRADE
             );
 
             self.assignments.push(assignment);

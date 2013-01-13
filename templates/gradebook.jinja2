@@ -5,8 +5,11 @@
 {% endblock %}
 
 {% block scripts %}
-{#    {{ block.super }}#}
-     <script src="/static/js/app.js"></script>
+     <script>
+        var inputStudents = {{ inputStudents|safe }};
+        var inputAssignments = {{ inputAssignments|safe }};
+     </script>
+     <script src="/static/js/gradebook.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -20,7 +23,7 @@
                 <a class="action_button_settings">
                     <span>Settings</span>
                 </a>
-                <a href="#" data-bind="click : addgrade" class="action_button_add">
+                <a href="#" data-bind="click : addAssignment" class="action_button_add">
                     Add Assignment
                 </a>
                 <a class="action_button_save">
@@ -37,7 +40,7 @@
                     <th class="second_name_type">Second name</th>
                     <th class="phone_type">Grade</th>
                 </thead>
-                <tbody data-bind="foreach : studs">
+                <tbody data-bind="foreach : students">
                     <tr>
                         <td>
                             <input class="inp_name_grade"  type="text" data-bind="value : firstName()" />
@@ -48,7 +51,6 @@
                         <td style="border: 1px solid #CCC; border-left:none; border-right:none; border-top:none;background:#F8F7F7;">
                             <span class="inp_grade" data-bind="text : average()"/>
                         </td>
-
                     </tr>
                 </tbody>
             </table>
@@ -56,14 +58,14 @@
         <div class="lessons_container">
             <table>
                 <thead>
-                    <th class="first_name_type_grades">Lesson</th>
+                    <tr data-bind="foreach : assignments">
+                        <th class="first_name_type_grades" data-bind="text : name()" />
+                    </tr>
                 </thead>
-                <tbody data-bind="foreach : studs">
-                    <tr>
+                <tbody data-bind="foreach : students">
+                    <tr data-bind="foreach : grades" >
                         <td>
-                            <!-- ko foreach : grades -->
-                                <input class="grades" type="text" data-bind="value : value" />
-                            <!-- /ko -->
+                            <input class="grades" type="text" data-bind="value : grade, valueUpdate: 'afterkeydown', enterKey:  $root.editGrade" />
                         </td>
                     </tr>
                 </tbody>

@@ -10,23 +10,35 @@ import models
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
-ROSTER_STUDENTS_STUB = [
+GRADEBOOK_STUDENTS_STUB = [
     {
         'id': 1,
         'firstName': 'Hello',
         'secondName': 'World',
-        'email': 'world@hello.com',
-        'phone': '+380981617916',
+        'grades': [3, 4],
     },
     {
         'id': 2,
         'firstName': 'I',
         'secondName': 'am',
-        'email': 'ro@b.ot',
-        'phone': '+380678156371',
+        'grades': [5, 5],
     },
 ]
 
+GRADEBOOK_ASSIGNMENTS_STUB = [
+    {
+        'id': 1,
+        'name': "Trolling",
+        'maxGrade': 5,
+    },
+    {
+        'id': 1,
+        'name': "Olololing",
+        'maxGrade': 5,
+    },
+]
+
+ROSTER_STUDENTS_STUB = GRADEBOOK_STUDENTS_STUB
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -41,8 +53,14 @@ class ClassRosterHandler(webapp2.RequestHandler):
 
 class GradebookHandler(webapp2.RequestHandler):
     def get(self):
-        return
-
+        template = jinja_environment.get_template('gradebook.jinja2')
+        self.response.out.write(
+            template.render({
+                'inputStudents': GRADEBOOK_STUDENTS_STUB,
+                'inputAssignments': GRADEBOOK_ASSIGNMENTS_STUB,
+                }
+            )
+        )
 
 # Handlers for updating students data:
 class RemoveStudent(webapp2.RequestHandler):

@@ -1,0 +1,187 @@
+﻿{% extends "base.jinja2" %}
+
+{% block title %}
+    Roster
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        var inputStudents = {{ inputStudents|safe }};
+    </script>
+    <script src="/static/js/roster.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="tabbable tabs-left">
+                <ul class="nav nav-tabs lf">
+                    <li><a href="#lA" data-toggle="tab">Info</a></li>
+                    <li class="active"><a href="#lB" data-toggle="tab">Class Roster</a></li>
+                    <li><a href="#lC" data-toggle="tab">Seating</a></li>
+                    <li><a href="#lD" data-toggle="tab">Schedule</a></li>
+                    <li><a href="#lE" data-toggle="tab">Access</a></li>
+                    <li><a href="#lF" data-toggle="tab">Policy</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane" id="lA">
+                       <div class="span12 tm">
+                            <div class="div-top"></div>
+                            <h4>Info</h4>
+                            <h5>Setting up a new class</h5>
+                            <div class="temp_cl">
+                                <div class="row">
+                                    <div class="span6">
+                                        <div class="cl_name">
+                                            <label>
+                                                *
+                                                                    <p>Class name</p>
+                                            </label>
+                                        </div>
+                                        <input class="input-xlarge ix" type="text">
+                                        <div class="div_tp">
+                                            <label>
+                                                *
+                                                                    <p>Subject</p>
+                                            </label>
+                                        </div>
+                                        <input class="input-xlarge ix" type="text">
+                                        <div class="div_tp">
+                                            <label>
+                                                *
+                                                                    <p>Course number</p>
+                                            </label>
+                                        </div>
+                                        <input class="input-xlarge ix" type="text">
+                                        <div class="div_tp">
+                                            <label>
+                                                <p>School session</p>
+                                            </label>
+                                        </div>
+                                        <select class="span2 tp">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <div class="row">
+                                            <div class="span6 spn">
+                                                <div class="div_tp">
+                                                    <label>
+                                                        *
+                                                                            <p>Start Date</p>
+                                                    </label>
+                                                </div>
+                                                <input class="input-medium med" type="text" />
+                                                <div class="day_name">
+                                                    <h6>Mon, Jan 23 2012</h6>
+                                                </div>
+                                            </div>
+                                            <div class="span6 nsp">
+                                                <div class="div_tp">
+                                                    <label style="margin-left: 12%;">
+                                                        *
+                                                                            <p>End Date</p>
+                                                    </label>
+                                                </div>
+                                                <input class="input-medium md" type="text" />
+                                                <div class="day_name2">
+                                                    <h6>Wed, May 30 2012</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="span6 lf">
+                                        <div class="row">
+                                            <div class="span5 tp">
+                                                <div class="div_tp">
+                                                    <label>Max # of students</label>
+                                                </div>
+                                                <input class="input-medium mi" type="text">
+                                            </div>
+                                            <div class="span5 mp">
+                                                <div class="div_tp">
+                                                    <label>Grade level</label>
+                                                </div>
+                                                <select class="span2 tx">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="div_tp">
+                                            <label>Description</label>
+                                        </div>
+                                        <div class="arr_div">
+                                            <textarea rows="10" cols="10" name="text"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane active" id="lB">
+
+                        <div id="roster_table" class="rost">
+                            <div class="rost_head">
+                                <div class="rost_but_left">
+                                    <input type="submit" data-bind="click : add" data-value="Add" value="Add student" class="action-button_rost_remove" />
+                                </div>
+                                <div class="rost_but_right">
+                                    <input type="submit" data-name="do" data-value="Email" value="Email" class="action-button_rost_email" />
+                                    <a class="action_button_rost"><span>Import</span></a>
+                                    <a href="#" class="action-button_print">Print</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  <a data-bind="click : addgrade" href="#">Add Grade</a>-->
+                        <div class="table_my" style="width: 100%; overflow-y: auto;">
+                            <table class="table table-bordered tabl">
+                                <thead>
+                                    <tr>
+                                        <th class="id_type">#</th>
+                                        <th class="first_name_type">First name</th>
+                                        <th class="second_name_type">Last name</th>
+                                        <th class="email_type">Email</th>
+                                        <th class="phone_type">Phone</th>
+                                        <th class="phone_type">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach : students">
+                                    <tr>
+                                        <td>
+                                            <span class="ind_type" data-bind="text : $index" />
+                                        </td>
+                                        <td>
+                                            <input class="inp_name" type="text" data-bind="value : firstName(), valueUpdate: 'afterkeydown', enterKey:  $root.edit" /></td>
+                                        <td>
+                                            <input class="inp_second_name" type="text" data-bind="value : secondName(), valueUpdate: 'afterkeydown', enterKey:  $root.edit" /></td>
+                                        <td>
+                                            <input class="inp_email" type="text" data-bind="value : email(), valueUpdate: 'afterkeydown', enterKey:  $root.edit" /></td>
+                                        <td>
+                                            <input class="inp_phone" type="text" data-bind="value : phone(), valueUpdate: 'afterkeydown', enterKey:  $root.edit" /></td>
+                                        <td>
+                                           <a data-bind="click : $root.remove" href="#"> <img src="/static/img/pict.png" /></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="lC">
+                        <p>What up girl, this is Section C.</p>
+                    </div>
+                    <div class="tab-pane" id="lD">
+                        <p>What up girl, this is Section D.</p>
+                    </div>
+                    <div class="tab-pane" id="lE">
+                        <p>What up girl, this is Section E.</p>
+                    </div>
+                    <div class="tab-pane" id="lF">
+                        <p>What up girl, this is Section F.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

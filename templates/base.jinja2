@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{% block title %}LearnBoots{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <!--@Styles.Render("~/Content/css")-->
+    <!--@Scripts.Render("~/bundles/modernizr")-->
+</head>
+<body>
+
+    <!--@Scripts.Render("~/bundles/jquery")-->
+    
+    <div class="navbar navbar-inverse ">
+        <div class="navbar-inner new">
+            <a class="brand" href="#">LearnBoost</a>
+            <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <ul class="nav" style="float: right; margin-right: 120px;">
+                <li style="border-right: 2px solid #4e4e4e; border-left: 2px solid #4e4e4e;">
+                    <a id="header-portfolio" href="#">
+                        <div class="icon"></div>
+                        MY PORTFOLIO</a>
+                </li>
+                <li><a href="#" style="border-right: 2px solid #4e4e4e;">LOGIN</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row hh">
+        <!--<div class="span6" style="display:inline-block;"> <button class="btn btn-mini" type="button" style="float:left; margin-left:3%; border-radius: 10px; "><< back to dashboard</button></div>
+<div class="span9" style="padding-bottom:0%;display:inline-block;"><button class="btn btn-mini"  type="button" style="float:right; margin-right:0%;border-radius: 10px;  ">Translate | Refer a friend</button></div>-->
+        <div class="span6"><a class="back" href="#"><< back to dashboard</a> </div>
+        <div class="span5 lk pull-right">
+            <a class="right_tr" href="#">Translate</a>
+            <a class="right_ref" href="#">Refer a friend</a>
+        </div>
+    </div>
+    <div class="temp">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="group_name">
+                    <div class="text_group">IF 59a</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabbable tb">
+            <ul class="nav nav-tabs tp">
+                <li class="active">
+                    <a href="#">Main</a>
+                </li>
+                <li>
+                    <a href="#">Non static</a>
+                </li>
+            </ul>
+            <div class="tab-content cont">
+                <div class="tab-pane active pn" id="tab1">
+                    <!--@RenderBody()-->
+                    {% block content %}
+                        <p>This is CONTENT!!</p>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <script src="/static/js/director.min.js"></script>
+    <script src="/static/js/knockout.min.js"></script>
+    {% block scripts %}
+    {% endblock %}
+   
+</body>
+</html>

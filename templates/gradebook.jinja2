@@ -1,0 +1,73 @@
+﻿{% extends "base.jinja2" %}
+
+{% block title %}
+    Gradebook
+{% endblock %}
+
+{% block scripts %}
+{#    {{ block.super }}#}
+     <script src="/static/js/app.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="grade_tab">
+        <div class="grade_tab_head">
+            <div class="grade_buttons">
+                <a href="#" class="action_button_grade">
+                    <span></span>
+                </a>
+
+                <a class="action_button_settings">
+                    <span>Settings</span>
+                </a>
+                <a href="#" data-bind="click : addgrade" class="action_button_add">
+                    Add Assignment
+                </a>
+                <a class="action_button_save">
+                    Save
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="table_my_grade">
+        <div class="stud_container">
+            <table>
+                <thead>
+                    <th class="first_name_type_grade">First name</th>
+                    <th class="second_name_type">Second name</th>
+                    <th class="phone_type">Grade</th>
+                </thead>
+                <tbody data-bind="foreach : studs">
+                    <tr>
+                        <td>
+                            <input class="inp_name_grade"  type="text" data-bind="value : firstName()" />
+                        </td>
+                        <td>
+                            <input class="inp_second_name_grade" type="text" data-bind="value : secondName()" />
+                        </td>
+                        <td style="border: 1px solid #CCC; border-left:none; border-right:none; border-top:none;background:#F8F7F7;">
+                            <span class="inp_grade" data-bind="text : average()"/>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="lessons_container">
+            <table>
+                <thead>
+                    <th class="first_name_type_grades">Lesson</th>
+                </thead>
+                <tbody data-bind="foreach : studs">
+                    <tr>
+                        <td>
+                            <!-- ko foreach : grades -->
+                                <input class="grades" type="text" data-bind="value : value" />
+                            <!-- /ko -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -42,13 +42,6 @@
     var ViewModel = function (inputStudents) {
         var self = this;
 
-        self.isSelected = ko.observable(false);
-        self.setUnSelected = function () {
-            self.isSelected(false);
-        }
-
-        self.current = ko.observable();
-
         // map array of passed in todos to an observableArray of Todo objects
         self.students = ko.observableArray(
             ko.utils.arrayMap(
@@ -66,14 +59,17 @@
         );
 
         self.add = function () {
-            console.log("add");
-           /* var grades = [];*/
-
-           /* for (var i = 0; i < count; i++) {
-                grades.push({ value: ko.observable(0) });
-            }*/
-            console.log(self.students)
-            self.students.push(new Student(null, "", "", "", ""));
+//            console.log("add");
+//            console.log(self.students)
+            self.students.push(
+                new Student(
+                    ko.observable(null),
+                    ko.observable(""),
+                    ko.observable(""),
+                    ko.observable(""),
+                    ko.observable("")
+                )
+            );
             console.log(self.students)
         }
 
@@ -84,7 +80,7 @@
                 self.students.remove(student);
             }
             else {
-                console.log(ko.toJSON(student));
+//                console.log(ko.toJSON(student));
                 var params = { id: obj.id };
 
                 $.ajax({
@@ -100,18 +96,15 @@
                 });
             }
 
-            console.log(obj);
+//            console.log(obj);
 
         }
 
         // Editing function
         self.edit = function (student) {
             var obj = ko.toJS(student);
-            console.log(obj);
-            //ko.observable(false)
-            self.setUnSelected();
-            var current = self.current();
-            console.log(current);
+//            console.log(obj);
+//            console.log(student);
 
             var params = {
                 'id':obj.id,
@@ -122,7 +115,11 @@
                 url: "/students/edit",
                 type: "POST",
                 data: params,
-                success: function () {
+                success: function (data) {
+//                    console.log(data);
+                    if (!data.id === undefined){
+                        student.id(data.id);
+                    }
                 },
                 error: function () {
                 }
@@ -133,11 +130,9 @@
     };
 
     // check local storage for todos
-   // var student = ko.utils.parseJson(localStorage.getItem('student'));
+    // var student = ko.utils.parseJson(localStorage.getItem('student'));
 
-    // bind a new instance of our view model to the page
-    // var student = [new Student("A", "B"), new Student("C", "D")];
-    console.log(inputStudents);
+//    console.log(inputStudents);
 
     var StudsModel = [];
 

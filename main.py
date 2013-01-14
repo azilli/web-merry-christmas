@@ -121,6 +121,17 @@ class EditGrade(webapp2.RequestHandler):
         sys.stderr.write("\nediting grade with student_id=%s, assignment_id=%s, data=%s\n" % (student, assignment, data))
 
 
+class SaveAllGrades(webapp2.RequestHandler):
+    def post(self):
+        data = loads(self.request.get('data'))
+
+        for grade in Grade.all():
+            for grade_json in data:
+                if grade_json["student_id"] == grade.student.key().id() and grade_json["assignment_id"] == grade.assignment.key().id():
+                    grade.mark = min(int(grade_json["grade"]), grade.assignment.max_grade)
+                    grade.put()
+
+
 class EditAssignment(webapp2.RequestHandler):
     def post(self):
         id_str = self.request.get('id')
@@ -168,6 +179,7 @@ app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/students/remove', RemoveStudent),
                                ('/grades/edit', EditGrade),
                                ('/assignments/edit', EditAssignment),
-                               ('/assignments/remove', RemoveAssignment)],
+                               ('/assignments/remove', RemoveAssignment),
+                               ('/grades/total_save', SaveAllGrades)],
     debug=True)
 

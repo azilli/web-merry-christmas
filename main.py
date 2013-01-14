@@ -103,6 +103,7 @@ class EditStudent(webapp2.RequestHandler):
                 grade.put()
         id_str = str(student.key().id())
         sys.stderr.write("\nediting student with id=%s, data=%s\n" % (id_str, data))
+        self.response.headers.add_header('content-type', 'application/json', charset='utf-8')
         self.response.out.write(dumps({"id": id_str}))
 
 
@@ -144,6 +145,7 @@ class EditAssignment(webapp2.RequestHandler):
 
         id_str = str(assignment.key().id())
         sys.stderr.write("\nediting grade with id=%s, data=%s\n" % (id_str, data))
+        self.response.headers.add_header('content-type', 'application/json', charset='utf-8')
         self.response.out.write(dumps({"id" : id_str}))
 
 

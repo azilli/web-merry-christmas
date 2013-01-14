@@ -115,9 +115,10 @@
                 url: "/students/edit",
                 type: "POST",
                 data: params,
+                dataType : 'json',
                 success: function (data) {
 //                    console.log(data);
-                    if (!data.id === undefined){
+                    if (data.id){
                         student.id(data.id);
                     }
                 },

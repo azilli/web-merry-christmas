@@ -182,6 +182,36 @@
             });
         }
 
+        self.saveAll = function () {
+            var data = [];
+            ko.utils.arrayForEach(
+                self.students(),
+                function (student) {
+                    ko.utils.arrayForEach(
+                        student.grades(),
+                        function (grade) {
+                            data.push(ko.toJS(grade));
+                        }
+                    );
+                }
+            );
+            console.log(data);
+
+            var params = {
+                data: ko.toJSON(data)
+            }
+
+            $.ajax({
+                url: "/grades/total_save",
+                type: "POST",
+                data: params,
+                success: function (data) {
+                },
+                error: function (data) {
+                }
+            });
+        }
+
         self.addAssignment = function () {
             var assignment = new Assignment(
                 null,
@@ -200,8 +230,9 @@
                 url: "/assignments/edit",
                 type: "POST",
                 data: params,
+                dataType : 'json',
                 success: function (data) {
-                    if (!data.id === undefined){
+                    if (data.id){
                         assignment.id(data.id);
                     }
 

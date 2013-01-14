@@ -43,10 +43,10 @@
                 <tbody data-bind="foreach : students">
                     <tr>
                         <td>
-                            <input class="inp_name_grade"  type="text" data-bind="value : firstName()" />
+                            <input class="inp_name_grade"  type="text" data-bind="value : firstName()" readonly />
                         </td>
                         <td>
-                            <input class="inp_second_name_grade" type="text" data-bind="value : secondName()" />
+                            <input class="inp_second_name_grade" type="text" data-bind="value : secondName()" readonly/>
                         </td>
                         <td style="border: 1px solid #CCC; border-left:none; border-right:none; border-top:none;background:#F8F7F7;">
                             <span class="inp_grade" data-bind="text : average()"/>

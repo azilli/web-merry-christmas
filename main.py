@@ -10,33 +10,6 @@ from models import *
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
 
-GRADEBOOK_STUDENTS_STUB = [
-    {
-        'id': 1,
-        'firstName': 'Hello',
-        'secondName': 'World',
-        'grades': [3, 4],
-    },
-    {
-        'id': 2,
-        'firstName': 'I',
-        'secondName': 'am',
-        'grades': [5, 5],
-    },
-]
-
-GRADEBOOK_ASSIGNMENTS_STUB = [
-    {
-        'id': 1,
-        'name': "Trolling",
-        'maxGrade': 5,
-    },
-    {
-        'id': 1,
-        'name': "Olololing",
-        'maxGrade': 5,
-    },
-]
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
